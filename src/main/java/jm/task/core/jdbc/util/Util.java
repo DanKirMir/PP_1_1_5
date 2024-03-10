@@ -75,11 +75,11 @@ public class Util {
 
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
             } catch (Exception e) {
-                System.out.println("Ошибка: метод \"getSessionFactory\" не установлен");
+                System.out.println("Ошибка: метод \"getSessionFactory\" не отработал");
                 e.printStackTrace();
             }
         }
-        System.out.println("метод \"getSessionFactory\" установлен");
+        System.out.println("метод \"getSessionFactory\" отработал успешно");
         return sessionFactory;
     }
 

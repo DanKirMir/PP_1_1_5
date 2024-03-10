@@ -9,13 +9,13 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    private SessionFactory sessionFactory;
-    private Transaction transaction = null;
-    private String createUsersQuery = "CREATE TABLE `mydatabase_v1`.`users` (\n" +
+    private final SessionFactory sessionFactory;
+    private Transaction transaction;
+    private final String createUsersQuery = "CREATE TABLE IF NOT EXISTS User (\n" +
             "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
             "  `name` VARCHAR(45) NOT NULL,\n" +
             "  `lastName` VARCHAR(45) NOT NULL,\n" +
-            "  `age` INT(3) NOT NULL,\n" +
+            "  `age` TINYINT(3) NOT NULL,\n" +
             "  PRIMARY KEY (`id`))";
 
     public UserDaoHibernateImpl() {
